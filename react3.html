@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/react@15.3.2/dist/react.js"></script>
+<script src="https://unpkg.com/react-dom@15.3.2/dist/react-dom.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.23/browser.min.js"></script>
+<style>
+    #cont {
+    padding: 50px;
+    background-color: gray;
+    }
+    div{
+        color: aqua;
+    }
+    </style>
+</head>
+<body>
+    <div id="cont"></div>
+    <script type="text/babel"">
+    var Letter = React.createClass({
+    render: function() {
+        var letterStyle = {
+padding: 10,
+margin: 10,
+backgroundColor: "#ffde00",
+color: "#333",
+display: "inline-block",
+fontFamily: "monospace",
+fontSize: "32",
+textAlign: "center"
+};
+    return(
+        <div style={letterStyle}>
+        {this.props.children}
+        </div>
+    );
+    }
+});
+var dest = document.querySelector("#cont")
+
+ReactDOM.render(
+    <div>
+        <Letter>A</Letter>
+        <Letter>B</Letter>
+        <Letter>C</Letter>
+        <Letter>D</Letter>
+        <Letter>E</Letter>
+        
+    </div>,dest
+);
+    
+    </script>
+</body>
+</html>
